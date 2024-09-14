@@ -1,78 +1,50 @@
-# KJV PowerShell Module
+KJV PowerShell Module
+This PowerShell module provides access to the King James Version (KJV) of the Bible using the Bible API. You can retrieve Bible verses directly from your terminal by specifying the book, chapter, and verse.
 
-This PowerShell module allows you to access the King James Version (KJV) of the Bible directly from your terminal.
+Installation
+To install and use the module, follow these instructions:
 
-## Installation
+1. Clone the Repository
+Clone the repository to your local machine:
 
-To get started, clone the repository and import the module into your PowerShell session.
-
-### Steps
-
-1. Clone this repository:
-
-```bash
+bash
+Copy code
 git clone https://github.com/tonymynd/KJV-PowerShell.git
-```
+2. Navigate to the Module Directory
+Change to the module directory:
 
-2. Change directory to the repository folder:
-
-```bash
+bash
+Copy code
 cd KJV-PowerShell/bible
-```
+3. Import the PowerShell Module
+Import the module into your PowerShell session:
 
-3. Import the PowerShell module:
-
-```powershell
+powershell
+Copy code
 Import-Module .\bible.psm1
-```
+Verify that the module is loaded and the function is available:
 
-4. Confirm that the module is loaded by running:
-
-```powershell
+powershell
+Copy code
 Get-Command -Module bible
-```
+You should see the Read-Bible function listed.
 
-You should see the `Read-Bible` function listed.
+Usage
+With the module imported, you can now retrieve any verse from the Bible using the Read-Bible function. For example, to get John 3:16, use the following command:
 
-## Usage
-
-Once the module is imported, you can read any Bible verse by using the `Read-Bible` function. Here's an example:
-
-```powershell
+powershell
+Copy code
 Read-Bible -Book "John" -Chapter 3 -Verse 16
-```
+The output will be:
 
-Output:
-
-```
+mathematica
+Copy code
 For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.
-```
+How It Works
+The Read-Bible function sends a request to the Bible API to fetch the specified verse. It handles any errors or issues with the request and returns the verse text if available.
 
-## Adding More Verses
+Adding More Features
+The module currently supports fetching verses using the Bible API. If you have ideas for additional features or improvements, such as support for different translations or more complex queries, feel free to contribute.
 
-To expand the module with more Bible verses, follow these steps:
-
-1. Open the `bible.psm1` file in any text editor.
-2. Add new entries to the `$bible` hashtable in the following format:
-
-```powershell
-$bible = @{
-    "John" = @{
-        3 = @{
-            16 = "For God so loved the world, ..."
-        }
-    }
-    # Add more books, chapters, and verses here
-}
-```
-
-3. Save the file and re-import the module:
-
-```powershell
-Remove-Module bible
-Import-Module .\bible.psm1
-```
-
-## License
-
-This module is in the public domain.
+License
+This module is released into the public domain, allowing anyone to use, modify, and distribute it freely.
