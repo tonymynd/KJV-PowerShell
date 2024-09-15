@@ -1,6 +1,14 @@
 # KJV PowerShell Module
 
-This PowerShell module provides access to the King James Version (KJV) of the Bible using the Bible API. You can retrieve Bible verses directly from your terminal by specifying the book, chapter, and verse.
+This PowerShell module provides easy access to the King James Version (KJV) of the Bible using a public Bible API. Retrieve Bible verses directly from your terminal by specifying the book, chapter, and verse.
+
+## Features
+
+- Fetch individual verses from the King James Version of the Bible
+- Support for both full book names and common abbreviations
+- Proper capitalization of book names in output
+- Error handling for invalid book names, chapters, and verses
+- Suggestions for similar book names when a typo is detected
 
 ## Installation
 
@@ -36,30 +44,65 @@ Verify that the module is loaded and the function is available:
 Get-Command -Module bible
 ```
 
-You should see the `Read-Bible` function listed.
+You should see the `kjv` function listed.
 
 ## Usage
 
-With the module imported, you can now retrieve any verse from the Bible using the `Read-Bible` function. For example, to get **John 3:16**, use the following command:
+With the module imported, you can retrieve any verse from the Bible using the `kjv` function. For example:
 
 ```powershell
-Read-Bible -Book "John" -Chapter 3 -Verse 16
+kjv John 3:16
 ```
 
 The output will be:
 
 ```
-For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.
+John 3:16 - For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.
+```
+
+You can use book abbreviations as well:
+
+```powershell
+kjv gen 1:1
+```
+
+For more detailed output, use the `-Verbose` parameter:
+
+```powershell
+kjv heb 4:12 -Verbose
 ```
 
 ## How It Works
 
-The `Read-Bible` function sends a request to the Bible API to fetch the specified verse. It handles any errors or issues with the request and returns the verse text if available.
+The `kjv` function sends a request to a public Bible API to fetch the specified verse. It handles book name recognition, including abbreviations, and provides error messages for invalid inputs or API issues.
+
+## Error Handling
+
+The module includes robust error handling:
+
+- If an invalid book name is provided, it suggests similar book names.
+- If a chapter or verse is out of range, it provides information about the valid range.
+- It handles API errors and provides informative error messages.
 
 ## Adding More Features
 
-The module currently supports fetching verses using the Bible API. If you have ideas for additional features or improvements, such as support for different translations or more complex queries, feel free to contribute.
+The module currently supports fetching individual verses from the King James Version. Future enhancements could include:
+
+- Support for different Bible translations
+- Ability to fetch entire chapters or passages
+- Search functionality for keywords or phrases
+- Integration with other Bible study tools or APIs
+
+Contributions and suggestions for improvements are welcome!
 
 ## License
 
-This module is released into the **public domain**, allowing anyone to use, modify, and distribute it freely.
+This module is released into the **public domain**, allowing anyone to use, modify, and distribute it freely without any restrictions.
+
+## Acknowledgements
+
+This module uses a public Bible API to retrieve verse data. We are grateful to the providers of this API for making Bible content freely accessible. This code and readme file was made with the help from de paid service of Claude.AI Proffesional.
+
+## Feedback and Contributions
+
+If you encounter any issues, have suggestions for improvements, or would like to contribute to the project, please open an issue or submit a pull request on the GitHub repository.
