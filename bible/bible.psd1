@@ -1,19 +1,19 @@
 @{
     RootModule = 'bible.psm1'
-    Author = 'Trevor Sullivan <trevor@trevorsullivan.net>'
+    Author = 'Jose Antonio Garciarivas Gutierrez <tonymynd@hotmail.com>'
     CompanyName = 'Public Domain'
     ModuleVersion = '0.1'
-    GUID = 'bc31dec4-2a1a-4727-a9dc-42299d47aa54'
+    GUID = '9c4431a5-c64c-4316-a421-88d6d68a33c6'
     Copyright = 'Public Domain'
     Description = 'The King James Version (KJV) of the Bible provided as a PowerShell module.'
-    FunctionsToExport = @('Read-Bible')
-    AliasesToExport = @('')
-    VariablesToExport = @('')
+    FunctionsToExport = @('kjv')
+    AliasesToExport = @()
+    VariablesToExport = @()
     PrivateData = @{
         PSData = @{
             Tags = @('bible', 'kjv', 'christian')
             LicenseUri = 'Public Domain'
-            ProjectUri = 'https://github.com/pcgeek86/bible-powershell'
+            ProjectUri = 'https://github.com/tonymynd/KJV-PowerShell'
             IconUri = ''
             ReleaseNotes = @'
 '@
